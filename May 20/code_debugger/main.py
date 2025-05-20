@@ -36,10 +36,9 @@ manager = GroupChatManager(
     llm_config=llm_config
 )
 
-async def run_debugger():
-    await user_proxy.a_initiate_chat(manager, message="""
-Hi! Please write a Python function that checks if a number is prime. Then debug it.
-""")
+async def run_debugger(user_message: str):
+    await user_proxy.a_initiate_chat(manager, message=user_message)
 
 if __name__ == "__main__":
-    asyncio.run(run_debugger())
+    user_input = input("Enter your prompt (e.g., 'Please write a Python function that checks if a number is leap year. Then debug it.'): ")
+    asyncio.run(run_debugger(user_input))
