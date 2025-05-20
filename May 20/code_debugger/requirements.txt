@@ -1,0 +1,14 @@
+# AutoGen framework (official PyPI version)
+pyautogen
+
+# Gemini API client
+google-generativeai
+
+# Async support
+aiofiles
+asyncio
+
+# Linting
+pylint
+
+streamlit
