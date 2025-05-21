@@ -20,7 +20,7 @@ debugger = get_debugger_agent(llm_config)
 # User-facing agent
 user_proxy = UserProxyAgent(
     name="User",
-    code_execution_config={"use_docker": False}
+    code_execution_config={"use_docker": False},
 )
 
 # Group Chat setup
@@ -36,9 +36,37 @@ manager = GroupChatManager(
     llm_config=llm_config
 )
 
-async def run_debugger(user_message: str):
-    await user_proxy.a_initiate_chat(manager, message=user_message)
+# File paths
+BUGGY_FILE_PATH = "buggy_code.py"
+FIXED_FILE_PATH = "buggy_code.py"  # Overwriting same file
+
+async def run_debugger():
+    # Step 1: Read the buggy code
+    with open(BUGGY_FILE_PATH, "r") as file:
+        buggy_code = file.read()
+
+    # Step 2: Construct the prompt
+    prompt = f"""Please fix the following Python code and provide the corrected code only (no explanation):
+
+```python
+{buggy_code}
+```"""
+
+    # Step 3: Run the group chat and capture the final message
+    await user_proxy.a_initiate_chat(manager, message=prompt)
+
+    # Step 4: Get last message from the groupchat to extract the final fixed code
+    last_msg = groupchat.messages[-1].content
+
+    # Step 5: Extract only the corrected code (assuming it’s inside a markdown code block)
+    if "```python" in last_msg:
+        corrected_code = last_msg.split("```python")[1].split("```")[0].strip()
+    else:
+        corrected_code = last_msg.strip()
+
+    # Step 6: Write corrected code back to file
+    with open(FIXED_FILE_PATH, "w") as file:
+        file.write(corrected_code)
 
 if __name__ == "__main__":
-    user_input = input("Enter your prompt (e.g., 'Please write a Python function that checks if a number is leap year. Then debug it.'): ")
-    asyncio.run(run_debugger(user_input))
+    asyncio.run(run_debugger())
