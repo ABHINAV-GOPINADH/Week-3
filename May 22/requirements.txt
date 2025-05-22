@@ -1,0 +1,9 @@
+autogen
+google-generativeai
+langchain
+chromadb
+langchain-community
+langchain-google-genai
+langchain-chroma
+python-docx
+

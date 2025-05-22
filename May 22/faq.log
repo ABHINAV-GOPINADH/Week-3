@@ -1,0 +1,100 @@
+2025-05-22 15:53:51,901 - INFO - Loaded PDF: C:\Users\Abhinav\Desktop\Lealabs internship\Week3\May 22\faq.pdf, pages: 7
+2025-05-22 15:53:51,903 - INFO - Created 7 chunks
+2025-05-22 15:53:51,903 - ERROR - Failed to setup ChromaDB: The CHROMA_GOOGLE_GENAI_API_KEY environment variable is not set.
+2025-05-22 15:53:51,903 - ERROR - PDF processing failed: The CHROMA_GOOGLE_GENAI_API_KEY environment variable is not set.
+2025-05-22 15:56:47,805 - INFO - Loaded PDF: C:\Users\Abhinav\Desktop\Lealabs internship\Week3\May 22\faq.pdf, pages: 7
+2025-05-22 15:56:47,805 - INFO - Created 7 chunks
+2025-05-22 15:56:47,837 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-05-22 15:56:54,423 - INFO - ChromaDB collection created with 7 chunks
+2025-05-22 15:56:54,437 - INFO - Initialized QueryHandlerAgent
+2025-05-22 15:56:54,437 - INFO - Initialized RAGRetrieverAgent
+2025-05-22 15:56:54,437 - INFO - Initialized CustomSelectorGroupChat with max_round=10, messages=0, selector_prompt=Select the next agent to respond based on the last...
+2025-05-22 15:56:54,437 - INFO - Initialized CustomSelectorGroupChat
+2025-05-22 15:56:54,437 - INFO - Reset CustomSelectorGroupChat messages and query_handler_count
+2025-05-22 15:57:23,297 - INFO - Created TextMessage: source='User' models_usage=None metadata={} content='what if i forget the password' type='TextMessage'
+2025-05-22 15:57:23,297 - INFO - Starting a_run_chat with message: source='User' models_usage=None metadata={} content='what if i forget the password' type='TextMessage', sender=QueryHandler
+2025-05-22 15:57:23,297 - INFO - Appended message to CustomSelectorGroupChat: {'content': 'what if i forget the password', 'role': 'user', 'source': 'User'}..., extra args: ()
+2025-05-22 15:57:23,297 - INFO - a_select_speaker called with last_speaker=QueryHandler, selector=<__main__.CustomSelectorGroupChat object at 0x0000024725FA3C80>
+2025-05-22 15:57:23,297 - INFO - Selecting speaker after last message: what if i forget the password (source: User)
+2025-05-22 15:57:23,925 - INFO - Gemini API call successful on attempt 1
+2025-05-22 15:57:23,925 - INFO - Speaker selection response: 'QueryHandler'
+2025-05-22 15:57:23,925 - INFO - Available agent names: ['QueryHandler', 'RAGRetriever']
+2025-05-22 15:57:23,925 - INFO - Incremented query_handler_count to 1
+2025-05-22 15:57:23,925 - INFO - Selected speaker: QueryHandler
+2025-05-22 15:57:23,925 - INFO - Round 1: Selected speaker: QueryHandler
+2025-05-22 15:57:23,925 - INFO - QueryHandlerAgent a_generate_reply called with messages=[{'content': 'what if i forget the password', 'role': 'user', 'source': 'User'}], sender=<__main__.CustomSelectorGroupChat object at 0x0000024725FA3C80>
+2025-05-22 15:57:23,925 - INFO - QueryHandlerAgent processing query: what if i forget the password
+2025-05-22 15:57:25,019 - INFO - Gemini API call successful on attempt 1
+2025-05-22 15:57:25,019 - INFO - Rephrased query: What is the procedure for password recovery if I forget my password?
+
+2025-05-22 15:57:25,019 - INFO - Reply from QueryHandler: source='QueryHandler' models_usage=None metadata={} content='What is the procedure for password recovery if I forget my password?\n' type='TextMessage'
+2025-05-22 15:57:25,019 - INFO - Appended message to CustomSelectorGroupChat: {'content': 'What is the procedure for password recovery if I forget my password?\n', 'role': 'user', 'source': 'QueryHandler'}..., extra args: ()
+2025-05-22 15:57:25,019 - INFO - a_select_speaker called with last_speaker=None, selector=<__main__.CustomSelectorGroupChat object at 0x0000024725FA3C80>
+2025-05-22 15:57:25,019 - INFO - Selecting speaker after last message: What is the procedure for password recovery if I forget my password?
+ (source: QueryHandler)
+2025-05-22 15:57:25,019 - INFO - QueryHandler already run, forcing RAGRetriever
+2025-05-22 15:57:25,019 - INFO - Round 2: Selected speaker: RAGRetriever
+2025-05-22 15:57:25,019 - INFO - RAGRetrieverAgent a_generate_reply called with messages=[{'content': 'what if i forget the password', 'role': 'user', 'source': 'User'}, {'content': 'What is the procedure for password recovery if I forget my password?\n', 'role': 'user', 'source': 'QueryHandler'}], sender=<__main__.CustomSelectorGroupChat object at 0x0000024725FA3C80>
+2025-05-22 15:57:25,019 - INFO - RAGRetrieverAgent processing query: What is the procedure for password recovery if I forget my password?
+2025-05-22 15:57:25,019 - INFO - Query variants: ['What is the procedure for password recovery if I forget my password?']
+2025-05-22 15:57:25,534 - INFO - Retrieved 7 chunks for query: What is the procedure for password recovery if I forget my password?
+2025-05-22 15:57:25,534 - INFO - Retrieved context: Select your preferred language in account or app settings.
+Frequently answer questions
+7
+
+On your device, find the app icon, uninstall it, then reinstall from the official 
+app store.
+1.
+What file for...
+2025-05-22 15:57:27,591 - INFO - Gemini API call successful on attempt 1
+2025-05-22 15:57:27,591 - INFO - Generated response: To recover your password if you've forgotten it:
+
+1. Click “Forgot Password?” on the login page.
+2. Follow the on-screen instructions to reset your password via email or SMS.
+...
+2025-05-22 15:57:27,591 - INFO - Reply from RAGRetriever: source='RAGRetriever' models_usage=None metadata={} content="To recover your password if you've forgotten it:\n\n1. Click “Forgot Password?” on the login page.\n2. Follow the on-screen instructions to reset your password via email or SMS.\n" type='TextMessage'
+2025-05-22 15:57:27,591 - INFO - Appended message to CustomSelectorGroupChat: {'content': "To recover your password if you've forgotten it:\n\n1. Click “Forgot Password?” on the login page.\n2. Follow the on-screen instructions to reset your password via email or SMS.\n", 'role..., extra args: ()
+2025-05-22 15:57:27,591 - INFO - Answer provided by RAGRetriever, stopping chat
+2025-05-22 15:57:27,591 - INFO - Chat reply: source='RAGRetriever' models_usage=None metadata={} content="To recover your password if you've forgotten it:\n\n1. Click “Forgot Password?” on the login page.\n2. Follow the on-screen instructions to reset your password via email or SMS.\n" type='TextMessage'
+2025-05-22 15:57:52,650 - INFO - Created TextMessage: source='User' models_usage=None metadata={} content='if i have 2 accounts' type='TextMessage'
+2025-05-22 15:57:52,651 - INFO - Starting a_run_chat with message: source='User' models_usage=None metadata={} content='if i have 2 accounts' type='TextMessage', sender=QueryHandler
+2025-05-22 15:57:52,651 - INFO - Appended message to CustomSelectorGroupChat: {'content': 'if i have 2 accounts', 'role': 'user', 'source': 'User'}..., extra args: ()
+2025-05-22 15:57:52,651 - INFO - a_select_speaker called with last_speaker=QueryHandler, selector=<__main__.CustomSelectorGroupChat object at 0x0000024725FA3C80>
+2025-05-22 15:57:52,651 - INFO - Selecting speaker after last message: if i have 2 accounts (source: User)
+2025-05-22 15:57:54,323 - INFO - Gemini API call successful on attempt 1
+2025-05-22 15:57:54,323 - INFO - Speaker selection response: 'QueryHandler'
+2025-05-22 15:57:54,323 - INFO - Available agent names: ['QueryHandler', 'RAGRetriever']
+2025-05-22 15:57:54,323 - INFO - Incremented query_handler_count to 1
+2025-05-22 15:57:54,323 - INFO - Selected speaker: QueryHandler
+2025-05-22 15:57:54,323 - INFO - Round 1: Selected speaker: QueryHandler
+2025-05-22 15:57:54,323 - INFO - QueryHandlerAgent a_generate_reply called with messages=[{'content': 'what if i forget the password', 'role': 'user', 'source': 'User'}, {'content': 'What is the procedure for password recovery if I forget my password?\n', 'role': 'user', 'source': 'QueryHandler'}, {'content': "To recover your password if you've forgotten it:\n\n1. Click “Forgot Password?” on the login page.\n2. Follow the on-screen instructions to reset your password via email or SMS.\n", 'role': 'user', 'source': 'RAGRetriever'}, {'content': 'if i have 2 accounts', 'role': 'user', 'source': 'User'}], sender=<__main__.CustomSelectorGroupChat object at 0x0000024725FA3C80>
+2025-05-22 15:57:54,323 - INFO - QueryHandlerAgent processing query: if i have 2 accounts
+2025-05-22 15:57:54,864 - INFO - Gemini API call successful on attempt 1
+2025-05-22 15:57:54,864 - INFO - Rephrased query: What are the implications of having two accounts?
+
+2025-05-22 15:57:54,864 - INFO - Reply from QueryHandler: source='QueryHandler' models_usage=None metadata={} content='What are the implications of having two accounts?\n' type='TextMessage'
+2025-05-22 15:57:54,864 - INFO - Appended message to CustomSelectorGroupChat: {'content': 'What are the implications of having two accounts?\n', 'role': 'user', 'source': 'QueryHandler'}..., extra args: ()
+2025-05-22 15:57:54,864 - INFO - a_select_speaker called with last_speaker=None, selector=<__main__.CustomSelectorGroupChat object at 0x0000024725FA3C80>
+2025-05-22 15:57:54,864 - INFO - Selecting speaker after last message: What are the implications of having two accounts?
+ (source: QueryHandler)
+2025-05-22 15:57:54,864 - INFO - QueryHandler already run, forcing RAGRetriever
+2025-05-22 15:57:54,864 - INFO - Round 2: Selected speaker: RAGRetriever
+2025-05-22 15:57:54,864 - INFO - RAGRetrieverAgent a_generate_reply called with messages=[{'content': 'what if i forget the password', 'role': 'user', 'source': 'User'}, {'content': 'What is the procedure for password recovery if I forget my password?\n', 'role': 'user', 'source': 'QueryHandler'}, {'content': "To recover your password if you've forgotten it:\n\n1. Click “Forgot Password?” on the login page.\n2. Follow the on-screen instructions to reset your password via email or SMS.\n", 'role': 'user', 'source': 'RAGRetriever'}, {'content': 'if i have 2 accounts', 'role': 'user', 'source': 'User'}, {'content': 'What are the implications of having two accounts?\n', 'role': 'user', 'source': 'QueryHandler'}], sender=<__main__.CustomSelectorGroupChat object at 0x0000024725FA3C80>
+2025-05-22 15:57:54,864 - INFO - RAGRetrieverAgent processing query: What are the implications of having two accounts?
+2025-05-22 15:57:54,864 - INFO - Query variants: ['What are the implications of having two accounts?']
+2025-05-22 15:57:55,864 - INFO - Retrieved 7 chunks for query: What are the implications of having two accounts?
+2025-05-22 15:57:55,864 - INFO - Retrieved context: Select your preferred language in account or app settings.
+Frequently answer questions
+7
+
+Frequently answer questions
+1.
+How do I reset my password if I’m locked out?
+Click “Forgot Password?” on the l...
+2025-05-22 15:57:56,790 - INFO - Gemini API call successful on attempt 1
+2025-05-22 15:57:56,790 - INFO - Generated response: The provided text mentions managing multiple user profiles on one device by using profile switching features in the app or creating separate accounts for each user.  However, it does not elaborate on ...
+2025-05-22 15:57:56,790 - INFO - Reply from RAGRetriever: source='RAGRetriever' models_usage=None metadata={} content='The provided text mentions managing multiple user profiles on one device by using profile switching features in the app or creating separate accounts for each user.  However, it does not elaborate on the implications of having two accounts.\n' type='TextMessage'
+2025-05-22 15:57:56,790 - INFO - Appended message to CustomSelectorGroupChat: {'content': 'The provided text mentions managing multiple user profiles on one device by using profile switching features in the app or creating separate accounts for each user.  However, it does not ..., extra args: ()
+2025-05-22 15:57:56,790 - INFO - Answer provided by RAGRetriever, stopping chat
+2025-05-22 15:57:56,790 - INFO - Chat reply: source='RAGRetriever' models_usage=None metadata={} content='The provided text mentions managing multiple user profiles on one device by using profile switching features in the app or creating separate accounts for each user.  However, it does not elaborate on the implications of having two accounts.\n' type='TextMessage'
+2025-05-22 15:58:36,617 - INFO - FAQ BOT closed.
